@@ -71,29 +71,25 @@ const Page = () => {
         >
           {isFollowing ? "Abonné" : "S'abonner"}
         </button>
-
-        {/* Stats */}
-        <div className="flex gap-12 mt-8">
-          <div className="text-center">
-            <span className="block text-2xl font-bold text-yellow-600 dark:text-yellow-400">
-              12.3K
-            </span>
-            <span className="text-gray-600 dark:text-gray-400">Abonnés</span>
-          </div>
-          <div className="text-center">
-            <span className="block text-2xl font-bold text-yellow-600 dark:text-yellow-400">
-              870
-            </span>
-            <span className="text-gray-600 dark:text-gray-400">Abonnements</span>
-          </div>
-          <div className="text-center">
-            <span className="block text-2xl font-bold text-yellow-600 dark:text-yellow-400">
-              132
-            </span>
-            <span className="text-gray-600 dark:text-gray-400">Publications</span>
-          </div>
-        </div>
       </header>
+
+      {/* Social Links */}
+      <nav className="max-w-3xl w-full mt-12 bg-yellow-50 dark:bg-gray-800 rounded-xl shadow-lg p-6 flex  flex-col items-center justify-center gap-10">
+          {socialLinks.map(({ name, href, icon }) => (
+            <a
+              key={name}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={name}
+              className="flex items-center gap-3 text-yellow-600 dark:text-yellow-400 hover:text-yellow-800 dark:hover:text-yellow-600 transition-colors duration-300 font-semibold text-lg"
+            >
+              {icon}
+              <span className="hidden sm:inline">{name}</span>
+            </a>
+          ))}
+        </nav>
+
 
       {/* Featured Posts Section */}
       <section className="max-w-3xl w-full mt-12 bg-white dark:bg-gray-900 rounded-xl shadow-lg p-8">
@@ -118,22 +114,6 @@ const Page = () => {
         </ul>
       </section>
 
-      {/* Social Links */}
-      <nav className="max-w-3xl w-full mt-12 bg-yellow-50 dark:bg-gray-800 rounded-xl shadow-lg p-6 flex justify-center gap-10">
-        {socialLinks.map(({ name, href, icon }) => (
-          <a
-            key={name}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={name}
-            className="flex items-center gap-3 text-yellow-600 dark:text-yellow-400 hover:text-yellow-800 dark:hover:text-yellow-600 transition-colors duration-300 font-semibold text-lg"
-          >
-            {icon}
-            <span className="hidden sm:inline">{name}</span>
-          </a>
-        ))}
-      </nav>
 
       {/* Contact Section */}
       <section className="max-w-3xl w-full mt-12 bg-white dark:bg-gray-900 rounded-xl shadow-lg p-8 flex flex-col items-center">
