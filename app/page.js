@@ -53,9 +53,9 @@ const Page = () => {
           ARRAID <span className="italic font-serif">𝐵𝒴 𝒜𝑅𝒯 𝒢𝒮𝐻 𝒟𝐸𝒞𝒪</span>
         </h1>
         <p className="text-gray-700 dark:text-gray-300 max-w-2xl leading-relaxed text-lg">
-          ✨ Artisanat en cuivre et laiton<br />
-          🏺 Pièces uniques et décor marocain authentique<br />
-          📩 Commandes personnalisées<br />
+           Artisanat en cuivre et laiton<br />
+          Pièces uniques et décor marocain authentique<br />
+          Commandes personnalisées<br />
           🚚 Livraison dans le monde entier
         </p>
 
