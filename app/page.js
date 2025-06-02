@@ -35,10 +35,77 @@ const socialLinks = [
   },
 ]
 
+const featuredPosts = [
+  {
+    id: 1,
+    title: "Comment augmenter vos abonnés Instagram",
+    date: "1 juin 2025",
+    excerpt: "Conseils et astuces pour augmenter organiquement votre portée Instagram en 2025.",
+  },
+  {
+    id: 2,
+    title: "L'importance de la communauté sur les réseaux sociaux",
+    date: "15 mai 2025",
+    excerpt: "Construire des connexions authentiques qui durent au-delà des simples abonnés.",
+  },
+]
+
 const Page = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white dark:bg-black transition-colors duration-500">
-      <nav className="flex flex-col sm:flex-row gap-6 p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-lg">
+    <div className="min-h-screen bg-gradient-to-tr from-yellow-50 via-white to-yellow-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-700 p-6 flex flex-col items-center">
+      
+      {/* Profile Header */}
+      <header className="max-w-3xl w-full bg-white dark:bg-gray-900 rounded-xl shadow-lg p-8 flex flex-col items-center text-center">
+        <img
+          src="arraid-logo.jpg"
+          alt="Profil"
+          className="w-28 h-28 rounded-full border-4 border-yellow-400 mb-4 shadow-md"
+        />
+        <h1 className="text-3xl font-extrabold text-yellow-600 dark:text-yellow-400 mb-2">
+          ARRAID 𝐵𝒴 𝒜𝑅𝒯 𝒢𝒮𝐻 𝒟𝐸𝒞𝒪
+        </h1>
+        <p className="text-gray-700 dark:text-gray-300 max-w-xl">
+          ✨ Artisanat en cuivre et laiton<br/>
+          🏺 Pièces uniques et décor marocain authentique<br/>
+          📩 Commandes personnalisées<br/>
+          🚚 Livraison dans le monde entier
+        </p>
+
+        {/* Stats */}
+        <div className="flex gap-12 mt-6">
+          <div className="text-center">
+            <span className="block text-2xl font-bold text-yellow-600 dark:text-yellow-400">12.3K</span>
+            <span className="text-gray-600 dark:text-gray-400">Abonnés</span>
+          </div>
+          <div className="text-center">
+            <span className="block text-2xl font-bold text-yellow-600 dark:text-yellow-400">870</span>
+            <span className="text-gray-600 dark:text-gray-400">Abonnements</span>
+          </div>
+          <div className="text-center">
+            <span className="block text-2xl font-bold text-yellow-600 dark:text-yellow-400">132</span>
+            <span className="text-gray-600 dark:text-gray-400">Publications</span>
+          </div>
+        </div>
+      </header>
+
+      {/* Featured Posts Section */}
+      <section className="max-w-3xl w-full mt-12 bg-white dark:bg-gray-900 rounded-xl shadow-lg p-8">
+        <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6 border-b border-yellow-300 dark:border-yellow-600 pb-2">
+          Articles en vedette
+        </h2>
+        <ul className="space-y-6">
+          {featuredPosts.map(({ id, title, date, excerpt }) => (
+            <li key={id} className="border-b border-gray-200 dark:border-gray-700 pb-4">
+              <h3 className="text-xl font-semibold text-yellow-600 dark:text-yellow-400 hover:underline cursor-pointer">{title}</h3>
+              <time className="block text-sm text-gray-500 dark:text-gray-400 mb-2">{date}</time>
+              <p className="text-gray-700 dark:text-gray-300">{excerpt}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Social Links */}
+      <nav className="max-w-3xl w-full mt-12 bg-yellow-50 dark:bg-gray-800 rounded-xl shadow-lg p-6 flex justify-center gap-8">
         {socialLinks.map(({ name, href, icon }) => (
           <a
             key={name}
@@ -46,13 +113,18 @@ const Page = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={name}
-            className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors duration-300 font-semibold text-lg"
+            className="flex items-center gap-2 text-yellow-600 dark:text-yellow-400 hover:text-yellow-800 dark:hover:text-yellow-600 transition-colors duration-300 font-semibold text-lg"
           >
             {icon}
             <span className="hidden sm:inline">{name}</span>
           </a>
         ))}
       </nav>
+
+      {/* Footer */}
+      <footer className="mt-16 text-center text-gray-500 dark:text-gray-400">
+        &copy; {new Date().getFullYear()} ARRAID 𝐵𝒴 𝒜𝑅𝒯 𝒢𝒮𝐻 𝒟𝐸𝒞𝒪. Tous droits réservés.
+      </footer>
     </div>
   )
 }
